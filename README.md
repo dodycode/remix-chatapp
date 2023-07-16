@@ -28,7 +28,7 @@ APP_URL=YOUR_HOST
 - If you want to test the chat, make sure you have 2 different github account. Then, login with different account in different browser.
 
 ## Todo
-- [ ] Change Server Sent Event to WebSocket. Currently the chat app using Server Sent Event to send message.
+- [ ] Change Server Sent Event to WebSocket. Currently the chat app using Server Sent Event to subscribe event.
 - [ ] Multiple login provider. Currently the chat app only support login with github. I want to add more login provider like google, facebook, etc.
 - [ ] Responsive UI. Currently some elements not responsive yet.
 - [ ] Add more features. Currently the chat app only have basic features. (maybe will do this when have free time)
