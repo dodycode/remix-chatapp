@@ -1,5 +1,5 @@
 ## Remix Chat App (WIP)
-chat app built with Remix JS and [shadcn/ui](https://github.com/shadcn/ui) for UI Components. Built for learning purpose.
+chat app build with Remix JS and [shadcn/ui](https://github.com/shadcn/ui) for UI Components. Built for learning purpose.
 
 ![Alt text](preview.png)
 
