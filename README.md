@@ -19,6 +19,8 @@ DATABASE_URL=YOUR_DATABASE_URL
 ```bash
 GITHUB_CLIENT_ID=YOUR_CLIENT_ID
 GITHUB_CLIENT_SECRET=YOUR_CLIENT_SECRET
+APP_URL=YOUR_HOST
+#eg: APP_URL=http://localhost:3000
 ```
 
 - Then, you can run the app with `npm run dev` or `yarn dev`.
