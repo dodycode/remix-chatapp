@@ -25,7 +25,7 @@ APP_URL=YOUR_HOST
 
 - Then, you can run the app with `npm run dev` or `yarn dev`.
 
-- If you want to test the chat, make sure you have 2 different github account. Then, login with different account in different browser.
+- If you want to test the chat, make sure you have 2 different github account. Then, login with different account in different browser. Anyway this app still using Server Sent Event to subscribe event, so don't confuse if your message not appear in real time in another browser, when you send message again for the second time.
 
 ## Todo
 - [ ] Change Server Sent Event to WebSocket. Currently the chat app using Server Sent Event to subscribe event.
