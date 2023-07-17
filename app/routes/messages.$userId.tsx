@@ -2,15 +2,15 @@ import { useRef, useEffect, useState } from "react";
 
 import { type LoaderArgs, redirect, json } from "@remix-run/node";
 
-import { useLoaderData, isRouteErrorResponse, useRouteError, useNavigation, useRevalidator } from "@remix-run/react";
+import { isRouteErrorResponse, useRouteError, useNavigation } from "@remix-run/react";
 import Chat from "~/components/Chat";
 import ChatInput from "~/components/ChatInput";
 
 import ErrorComp from "~/components/ErrorComp";
 import { db } from "~/db.server";
 import { authenticator } from "~/services/auth.server";
-import { useEventSource } from "remix-utils";
-import { emitter } from "~/services/emitter.server";
+import { EVENTS } from "~/events";
+import { useLiveLoader } from "~/hooks/useLiveLoader";
 
 export async function loader({ params, request }: LoaderArgs) {
   if (typeof params.userId !== "string") {
@@ -67,7 +67,8 @@ export async function action({ request }: LoaderArgs) {
     });
 
     //emit new message to receiver
-    emitter.emit("message", newMessage);
+    EVENTS.MESSAGE_SENT(newMessage.id);
+
   } catch (error) {
     console.log(error);
   }
@@ -84,9 +85,9 @@ export function ErrorBoundary() {
 }
 
 export default function MessageDetail() {
-  const { messages, loggedInUser, receiverId } = useLoaderData();
+  // const { messages, loggedInUser, receiverId } = useLoaderData();
+  const { messages, loggedInUser, receiverId } = useLiveLoader<typeof loader>();
   const navigation = useNavigation();
-  const revalidator = useRevalidator();
   const isSubmitting = navigation.state === "submitting";
   const bottomRef = useRef<HTMLDivElement>(null);
   const [submittedMessage, setSubmittedMessage] = useState(null);
@@ -112,15 +113,6 @@ export default function MessageDetail() {
       setSubmittedMessage(message);
     }
   }, [isSubmitting])
-
-  //subscribe to new messages
-  const messageFromServer = useEventSource("/subscribe-message", {
-    event: "message",
-  });
-
-  useEffect(() => {
-    revalidator.revalidate();
-  }, [messageFromServer])
 
   return (
     <div className="flex flex-shrink-0 flex-grow flex-col max-w-full relative">

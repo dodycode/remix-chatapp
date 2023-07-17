@@ -7,7 +7,7 @@ export default function Chat({ message, isSender = false, pending = false }: any
   return (
     <div className={cn(
       "flex items-start flex-shrink flex-grow-0 gap-x-2",
-      isSender ? "self-start" : "self-end flex-row-reverse",
+      isSender ? "self-end flex-row-reverse" : "self-start",
       pending ? "opacity-50" : ""
     )}>
       <Avatar>
