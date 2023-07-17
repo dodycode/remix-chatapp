@@ -1,7 +1,7 @@
 ## Remix Chat App (WIP)
 chat app build with Remix JS and [shadcn/ui](https://github.com/shadcn/ui) for UI Components. Built for learning purpose.
 
-![Alt text](preview.png)
+![Alt text](image.png)
 
 ## Getting Started
 - First, you need to setup your database, I recommend use plan free from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or plan free from [Planetscale](https://planetscale.com/).
@@ -28,7 +28,6 @@ APP_URL=YOUR_HOST
 - If you want to test the chat, make sure you have 2 different github account. Then, login with different account in different browser.
 
 ## Todo
-- [x] Change Server Sent Event to WebSocket. Currently the chat app using Server Sent Event to subscribe event. - ISSUE FIXED, still using Server Sent Event but it works fine now.
 - [ ] Multiple login provider. Currently the chat app only support login with github. I want to add more login provider like google, facebook, etc.
 - [ ] Responsive UI. Currently some elements not responsive yet.
 - [ ] Add more features. Currently the chat app only have basic features. (maybe will do this when have free time)
