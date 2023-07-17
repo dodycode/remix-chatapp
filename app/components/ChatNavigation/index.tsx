@@ -9,7 +9,7 @@ export default function ChatNavigation() {
         <Header />
         <Search />
         <InboxList />
-        <div className="flex flex-grow-0 flex-shrink items-center justify-center py-5 border-t mt-auto">
+        <div className="flex flex-grow-0 flex-shrink items-center justify-center border-t mt-auto" style={{ height: '69px' }}>
           Made with ❤️ by Dodycode
         </div>
       </div>
