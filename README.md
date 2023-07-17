@@ -1,7 +1,7 @@
 ## Remix Chat App (WIP)
 chat app build with Remix JS and [shadcn/ui](https://github.com/shadcn/ui) for UI Components. Built for learning purpose.
 
-![Alt text](image.png)
+![Alt text](0.png)
 
 ## Getting Started
 - First, you need to setup your database, I recommend use plan free from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or plan free from [Planetscale](https://planetscale.com/).
